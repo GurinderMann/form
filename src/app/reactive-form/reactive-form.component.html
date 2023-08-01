@@ -31,12 +31,14 @@
       placeholder="Confirm password"
       class="my-3 form-control"
     />
-    <input
-      type="select"
-      required
-      formControlName="genere"
-      class="my-3 form-control"
-    />
+
+    <select name="genere" ngModel class="form-control">
+      <option value="">Genere</option>
+      <option value="milano">Uomo</option>
+      <option value="roma">Donna</option>
+      <option value="napoli">Altro</option>
+    </select>
+
     <input
       type="file"
       required
