@@ -1,0 +1,65 @@
+<div class="container-fluid w-100">
+  <form
+    [formGroup]="myForm"
+    class="d-flex flex-column justify-content-center align-items-center w-25 mx-auto mt-3"
+  >
+    <input
+      type="text"
+      required
+      formControlName="nome"
+      placeholder="Name"
+      class="my-3 form-control"
+    />
+    <input
+      type="text"
+      required
+      formControlName="cognome"
+      placeholder="Surname"
+      class="my-3 form-control"
+    />
+    <input
+      type="password"
+      required
+      formControlName="password"
+      placeholder="Password"
+      class="my-3 form-control"
+    />
+    <input
+      type="password"
+      required
+      formControlName="passVerify"
+      placeholder="Confirm password"
+      class="my-3 form-control"
+    />
+    <input
+      type="select"
+      required
+      formControlName="genere"
+      class="my-3 form-control"
+    />
+    <input
+      type="file"
+      required
+      formControlName="profile"
+      class="my-3 form-control"
+    />
+    <input
+      type="textarea"
+      formControlName="bio"
+      class="my-3 form-control"
+      placeholder="bio"
+    />
+    <input
+      type="text"
+      required
+      formControlName="username"
+      class="my-3 form-control"
+      placeholder="username"
+    />
+    <button class="btn btn-outline-success" (click)="submit()">submit</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  </form>
+</div>
