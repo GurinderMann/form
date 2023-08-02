@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -7,13 +9,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormComponent implements OnInit {
   myForm: FormGroup;
-  successMessage: string = ""
-  errorMessage: string =""
+  successMessage: string = "";
+  errorMessage: string = "";
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authSvc: AuthService) {
     this.myForm = this.formBuilder.group({
       nome: ['', Validators.required],
       cognome: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       passVerify: ['', Validators.required],
       genere: ['', Validators.required],
@@ -27,19 +30,25 @@ export class ReactiveFormComponent implements OnInit {
 
   submit() {
     if (this.myForm.valid) {
+      const { username, password, email } = this.myForm.value;
 
-      console.log(this.myForm.value);
-      this.myForm.reset()
-      this.successMessage = 'Registered successfully!';
-      this.errorMessage = '';
+      this.authSvc.register(username, password, email).subscribe(
+        response => {
+          console.log(response);
+          this.myForm.reset();
+          this.successMessage = 'Registered successfully!';
+          this.errorMessage = '';
+        },
+        error => {
+          console.error(error);
+          this.errorMessage = 'An error occurred during registration.';
+          this.successMessage = '';
+        }
+      );
     } else {
       this.myForm.markAllAsTouched();
-      this.errorMessage = 'Pleas fill all required fields.';
+      this.errorMessage = 'Please fill all required fields.';
     }
   }
-
-
-
-
 
 }

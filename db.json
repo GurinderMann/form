@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "sabytyb@mailinator.com",
+      "password": "$2a$10$MHyjcJuCyLhC0neQBhZJ2.GxwEQ9d/3OHA8UtWPDAoXmVjFDOk1yS",
+      "username": "Tempora soluta autem",
+      "id": 1
+    },
+    {
+      "email": "mmg@gmail.com",
+      "password": "$2a$10$5vG3APYMQANRA9h/lLQRwO.RLt33CtciSb0rNzA67evbn7NzE.G1K",
+      "username": "asdasds",
+      "id": 2
+    }
+  ]
+}

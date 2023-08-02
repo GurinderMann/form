@@ -1,11 +1,11 @@
 <div class="container justify-content-center">
   <form class="w-25 mx-auto d-flex flex-column justify-content-center mt-5">
     <input
-      type="text"
+      type="email"
       class="form-control my-3"
-      placeholder="username"
-      name="username"
-      [(ngModel)]="nome"
+      placeholder="email"
+      name="email"
+      required
     />
 
     <input
@@ -13,7 +13,7 @@
       class="form-control my-3"
       placeholder="password"
       name="password"
-      [(ngModel)]="password"
+      required
     />
     <div class="d-flex justify-content-center">
       <button (click)="submit()" class="btn btn-primary w-25">Login</button>

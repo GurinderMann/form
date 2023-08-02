@@ -18,6 +18,13 @@
       class="my-3 form-control"
     />
     <input
+      type="email"
+      required
+      formControlName="email"
+      placeholder="Email"
+      class="my-3 form-control"
+    />
+    <input
       type="password"
       required
       formControlName="password"
@@ -32,11 +39,11 @@
       class="my-3 form-control"
     />
 
-    <select name="genere" ngModel class="form-control">
+    <select formControlName="genere" class="form-control">
       <option value="">Genere</option>
-      <option value="milano">Uomo</option>
-      <option value="roma">Donna</option>
-      <option value="napoli">Altro</option>
+      <option value="uomo">Uomo</option>
+      <option value="donna">Donna</option>
+      <option value="altro">Altro</option>
     </select>
 
     <input
