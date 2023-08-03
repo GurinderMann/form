@@ -1,3 +1,5 @@
+<p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+
 <div class="container-fluid w-100">
   <form
     [formGroup]="myForm"
@@ -70,5 +72,10 @@
     <div *ngIf="successMessage" class="success-message">
       {{ successMessage }}
     </div>
+    <p-messages
+      [(value)]="messages"
+      [enableService]="false"
+      [closable]="false"
+    ></p-messages>
   </form>
 </div>

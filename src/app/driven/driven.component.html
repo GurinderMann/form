@@ -1,3 +1,5 @@
+<p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+
 <div class="container justify-content-center">
   <form class="w-25 mx-auto d-flex flex-column justify-content-center mt-5">
     <input
@@ -17,11 +19,11 @@
     />
     <div class="d-flex justify-content-center">
       <button (click)="submit()" class="btn btn-primary w-25">Login</button>
-      <button type="button" class="btn btn-outline-secondary w-50 mx-2">
-        <a routerLink="reactive" class="text-decoration-none text-black">
-          Registrati</a
-        >
-      </button>
     </div>
+    <p-messages
+      [(value)]="messages"
+      [enableService]="false"
+      [closable]="false"
+    ></p-messages>
   </form>
 </div>

@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { DrivenComponent } from './driven/driven.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  {path: '', component: DrivenComponent },
-  {path: 'reactive', component: ReactiveFormComponent}
+  {path: 'home', component: DrivenComponent },
+  {path: 'register', component: ReactiveFormComponent},
+  {path:'users',component:UserComponent}
 ];
 
 @NgModule({

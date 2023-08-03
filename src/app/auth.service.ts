@@ -12,8 +12,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/login', { username, password }).pipe(
+  login(email: string, password: string): Observable<any> {
+    console.log('Email:', email, 'Password:', password);
+
+    return this.http.post<any>('http://localhost:3000/login', { email, password }).pipe(
       tap(response => {
         if (response.token) {
           this.token = response.token;
@@ -22,7 +24,6 @@ export class AuthService {
       })
     );
   }
-
   register(username: string, password: string, email: string): Observable<any> {
     return this.http.post<any>('http://localhost:3000/register', { username, password, email }).pipe(
       tap(response => {
